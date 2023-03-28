@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
-//import logo from '../assets/img/logo.svg';
 import {
     BrowserRouter,
     Routes,
@@ -39,19 +38,13 @@ export const NavBar = () => {
         <BrowserRouter>
             <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
                 <Container>
-                    <Navbar.Brand href="/">
-                        <img src={""} alt="Logo" />
-                    </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav">
-                        <span className="navbar-toggler-icon"></span>
-                    </Navbar.Toggle>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
                             <Nav.Link href="/" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
-                            <NavDropdown title="Blog" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="blog/traveling">Traveling Wishlist</NavDropdown.Item>
-                                <NavDropdown.Item href="blog/pentesting">Pentesting</NavDropdown.Item>
-                                <NavDropdown.Item href="blog/sailing">Sailing</NavDropdown.Item>
+                            <NavDropdown title="Blog" id="basic-nav-dropdown" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'}>
+                                <NavDropdown.Item href="blog/traveling" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'}>Traveling Wishlist</NavDropdown.Item>
+                                <NavDropdown.Item href="blog/pentesting" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'}>Pentesting</NavDropdown.Item>
+                                <NavDropdown.Item href="blog/sailing" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'}>Sailing</NavDropdown.Item>
                             </NavDropdown>
                             <Nav.Link href="/contact" className={activeLink === 'contact' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('contact')}>Contact</Nav.Link>
                         </Nav>
